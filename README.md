@@ -1,8 +1,27 @@
-# React + Vite
+# 3D_website_portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Use React+Vite+Tailwind
 
-Currently, two official plugins are available:
+A template of 3D website_portfolio, learn from Javascript Mastery, edit to use
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you want to create a new one from scratch：
+
+```
+npm create vite@latest ./ -- --template react
+```
+
+```
+//https://tailwindcss.com/docs/guides/create-react-app
+npx create-react-app my-project
+cd my-project
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+To run ,Install:
+
+```
+npm install --legacy-peer-deps @react-three/fiber@react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion react-router-dom
+```
+
+emailjs.com service used
