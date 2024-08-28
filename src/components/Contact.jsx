@@ -6,12 +6,12 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-//EMAILJS.COM SERVICE:
-//template_pkz7flg
-//service_jnjasu9
-//public key: A46hZAcsnHQx-Dtv9
+import { useTranslation } from 'react-i18next';
+import { contactMethods } from "../constants";
+
 
 const Contact = () => {
+  const { t } = useTranslation();
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -51,7 +51,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert(t('email.alert-success'));
 
           setForm({
             name: "",
@@ -63,7 +63,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          alert(t('email.alert-error'));
         }
       );
   };
@@ -77,7 +77,7 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>{t('email.contact')}.</h3>
 
         <form
           ref={formRef}
@@ -85,45 +85,59 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            <span className='text-white font-medium mb-4'>{t('email.your-name')} </span>
             <input
               type='text'
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder={t('email.your-name-describe')}
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-medium mb-4'>{t('email.your-email')} </span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder={t('email.your-email-describe')}
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            <span className='text-white font-medium mb-4'>{t('email.your-message')} </span>
             <textarea
               rows={7}
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder={t('email.your-message-describe')}
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
-
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+          <div className="flex justify-between items-center">
+            <button
+              type='submit'
+              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            >
+              {loading ? t('email.sending') : t('email.send')}
+            </button>
+            <div className="flex justify-end items-center space-x-4">
+              {contactMethods.map((method, index) => (
+                <a 
+                  key={index} 
+                  href={method.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 flex justify-center items-center bg-gray-800 rounded-full"
+                >
+                  <img src={method.icon} alt={method.name} className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
+          </div>
         </form>
       </motion.div>
 

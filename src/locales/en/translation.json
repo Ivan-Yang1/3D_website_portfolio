@@ -1,0 +1,55 @@
+{
+    "welcome_message": "Welcome to my website",
+    "navbar": {
+      "about": "About",
+      "work": "Work",
+      "contact": "Contact"
+      
+    },
+    "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Ansel",
+    "description": {
+      "part1": "I'm an indie developer",
+      "part2": "exploring the future of Web3 and Fintech."
+    }
+  },
+    "about": {
+      "sectionSubText": "Introduction",
+      "sectionHeadText": "Overview",
+      "description": "I have an ECE bachelor degree, and during my college time I have won awards in international mathematical modeling and data mining competitions. Now I work as a software engineer and analyse data in Marketing department. I am also a full-stack independent developer, I use React and Nodejs/Django to develop projects, and I use python for data analysis. At the same time, I am a programmer who is passionate about exploring Web3 and fintech, and I am learning to develop blockchain smart contracts using Solidity, explore on-chain data and try to write my own quantitative trading strategy. I am passionate about learning new technologies and am happy to share my knowledge and experience with others. I look forward to working with you to explore the infinite possibilities of Web3 and FinTech."
+    },
+    "experience": {
+      "HeadText": "Work Experience",
+      "job1-title": "IT Technical Support/Data Specialist",
+      "job1-company_name": "China Telecom",
+      "job1-date": "July 2023 - present",
+      "job1-points1": "Marketing Data Analyse: User behavior data mining and analysis. Develop, Mantain and Automated reporting systems",
+      "job1-points2": "Internal system development: Python Django framework was used to develop the back-end of China Telecom's safety production system",
+      "job1-points3": "Participate in the development of the internal AI bidding document inspection system, and be familiar with the whole process of development and implementation such as git code management, front-end and back-end collaboration, and online deployment"
+      
+    },
+    "project": {
+      "HeadText": "Projects",
+      "subtext":"Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.",
+      "project1-title": "3D_website_portfolio",
+      "project1-description": "This project implemented a 3D personal website using React and Three.js, where users can view their personal profile, portfolio, and more on dynamic interactive cards. This website has adapted the screen size for mobile devices and provided multilingual support through i18next. You can also send information directly to my email in the contact section at the bottom."
+    },
+    "email": {
+      "contact": "Contact",
+      "alert-success": "Thank you. I will get back to you as soon as possible.",
+      "alert-error": "Ahh, something went wrong. Please try again or contact me in other way.",
+      "your-name": "Your name",
+      "your-name-describe" : "What is your good name?",
+      "your-email": "Your email",
+      "your-email-describe": "What is your web address?",
+      "your-message": "Your message",
+      "your-message-describe": "What do you want to say?",
+
+      "send": "Send",
+      "sending": "Sending"
+    }
+    
+  
+  }
+  

@@ -5,10 +5,19 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+
+//console.log(i18n.resources);
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const { t } = useTranslation();
+
+  const navLinksArray = navLinks(t);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +33,13 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'en' ? 'zh' : 'en';
+    i18n.changeLanguage(newLanguage);
+  };
+
+
 
   return (
     <nav
@@ -42,7 +58,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src={logo} alt='logo' className='w-25 h-5 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Ansel &nbsp;
             <span className='sm:block hidden'> | Yang Yifan</span>
@@ -50,7 +66,7 @@ const Navbar = () => {
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
+          {navLinksArray.map((nav) => (
             <li
               key={nav.id}
               className={`${
@@ -61,6 +77,15 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          {/* Language Toggle Button */}
+          <li>
+            <button
+              onClick={toggleLanguage}
+              className="text-white bg-transparent border border-white px-3 py-1 rounded hover:bg-white hover:text-black transition-all duration-300"
+            >
+              {i18n.language === 'en' ? '中文' : 'EN'}
+            </button>
+          </li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -77,7 +102,7 @@ const Navbar = () => {
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-              {navLinks.map((nav) => (
+              {navLinksArray.map((nav) => (
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
@@ -91,6 +116,16 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              {/* Mobile Language Toggle */}
+              <li>
+                <button
+                  onClick={toggleLanguage}
+                  className="text-white bg-transparent border border-white px-3 py-1 rounded hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  {i18n.language === 'en' ? '中文' : 'EN'}
+                </button>
+              </li>
+              
             </ul>
           </div>
         </div>

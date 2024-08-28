@@ -12,6 +12,9 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -57,6 +60,7 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { t } = useTranslation();
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -64,13 +68,13 @@ const Experience = () => {
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        {t('experience.HeadText')}.
         </h2>
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {experiences(t).map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
@@ -82,4 +86,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "experience");

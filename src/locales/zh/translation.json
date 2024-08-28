@@ -1,0 +1,53 @@
+{
+    "welcome_message": "欢迎来到我的网站",
+    "navbar": {
+      "about": "简介",
+      "work": "履历",
+      "contact": "联系"
+    },
+    "hero": {
+    "greeting": "Hi，我是",
+    "name": "雵伊凡",
+    "description": {
+      "part1": "一名探索Web3",
+      "part2": "与金融科技的程序员"
+    }
+    },
+    "about": {
+      "sectionSubText": "Introduction",
+      "sectionHeadText": "简介",
+      "description": "我是电子与计算机工程专业出身，曾多次获得国际数学建模与数据挖掘大赛奖项。现在我从事软件开发与市场数据挖掘分析的工作，同时也是一名全栈独立开发者，我使用React和Nodejs/Django开发项目，在数据分析上我使用python。同时，我是一名热衷于探索Web3与金融科技领域的程序员，我正在学习利用Solidity开发区块链智能合约，探索链上数据并尝试编写自己的量化交易策略。我热衷于学习新技术，并乐于与他人分享我的知识和经验。我期待着与您合作，共同探索Web3与金融科技领域的无限可能。"
+    },
+    "experience": {
+      "HeadText": "工作经历",
+      "job1-title": "IT技术支持/数据专员",
+      "job1-company_name": "中国电信",
+      "job1-date": "2023年7月 - 至今",
+      "job1-points1": "数据支撑统计：日常用户行为数据挖掘与分析，开发以及维护自动化报表系统",
+      "job1-points2": "内部系统开发：运用Python Django框架进行中国电信安全生产系统后端开发",
+      "job1-points3": "参与学习内部AI招投标文书检查系统开发，熟悉git代码管理，前后端协作，上线部署等全流程开发落地"
+      
+    },
+    "project": {
+      "HeadText": "项目",
+      "subtext": "以下项目通过我的实际工作示例展示了我的技能和经验。每个项目都有简短的描述，并附有代码库链接和现场演示。它反映了我解决复杂问题、使用不同技术和有效管理项目的能力。",
+      "project1-title": "3D个人网站",
+      "project1-description": "这个项目通过React和Three.js实现了一个3D个人网站，用户可以在动态交互卡片上查看我的个人简介，作品集等。这个网站做了移动端屏幕大小适配，并且通过i18next做了多语言支持，你还可以在最下方联系部分直接将信息发送到我的邮箱。"
+    },
+    "email": {
+      "contact": "联系我",
+      "alert-success": "感谢来信，我会尽快回复",
+      "alert-error": "邮件发送出现未知错误，请重试或者用其他方式联系我",
+      "your-name": "你的名称",
+      "your-name-describe" : "输入你的名字或公司名称",
+      "your-email": "你的邮箱",
+      "your-email-describe": "我可以通过这个邮件地址回信",
+      "your-message": "你的消息",
+      "your-message-describe": "输入你想发送的消息",
+
+      "send": "发送",
+      "sending": "发送中"
+    }
+    
+  }
+  

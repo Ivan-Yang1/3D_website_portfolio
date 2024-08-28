@@ -14,31 +14,49 @@ import {
     mongodb,
     git,
     figma,
+    mysql,
+    python,
+    c,
+    ethereum,
+    linux,
     docker,
     meta,
     starbucks,
+    chinatelecom,
     tesla,
     shopify,
     carrent,
+    personalWeb,
     jobit,
     tripguide,
     threejs,
+    wechat,
+    telegram,
+    linkedin,
+    email,
   } from "../assets";
   
-  export const navLinks = [
+
+  
+  export const navLinks = (t) => [
     {
       id: "about",
-      title: "About",
+      title: t('navbar.about'),
     },
     {
-      id: "work",
-      title: "Work",
+      id: "experience",
+      title: t('navbar.work'),
+    },
+    {
+      id: "project",
+      title: t('project.HeadText')
     },
     {
       id: "contact",
-      title: "Contact",
+      title: t('navbar.contact'),
     },
   ];
+  
   
   const services = [
     {
@@ -46,15 +64,15 @@ import {
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "FullStack Developer",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "BlockChian Developer",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Quant Developer",
       icon: creator,
     },
   ];
@@ -69,10 +87,6 @@ import {
       icon: css,
     },
     {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
       name: "TypeScript",
       icon: typescript,
     },
@@ -80,10 +94,7 @@ import {
       name: "React JS",
       icon: reactjs,
     },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
+    
     {
       name: "Tailwind CSS",
       icon: tailwind,
@@ -93,80 +104,50 @@ import {
       icon: nodejs,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+      name: "Python",
+      icon: python,
     },
     {
-      name: "Three JS",
-      icon: threejs,
+      name: "C",
+      icon: c,
     },
     {
       name: "git",
       icon: git,
     },
     {
-      name: "figma",
-      icon: figma,
+      name: "Mysql",
+      icon: mysql,
     },
     {
       name: "docker",
       icon: docker,
     },
+    {
+      name: "Ethereum",
+      icon: ethereum,
+    },
+    {
+      name: "Linux",
+      icon: linux,
+    },
   ];
   
-  const experiences = [
+  const experiences = (t) => [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: t("experience.job1-title"),
+      company_name: t("experience.job1-company_name"),
+      icon: chinatelecom,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: t("experience.job1-date"),
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        t("experience.job1-points1"),
+        t("experience.job1-points2"),
+        t("experience.job1-points3"),
+        
       ],
     },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
+    
   ];
   
   const testimonials = [
@@ -196,18 +177,18 @@ import {
     },
   ];
   
-  const projects = [
+  const projects = (t) => [
     {
-      name: "Car Rent",
+      name: t("project.project1-title"),
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        t("project.project1-description"),
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "threejs",
           color: "green-text-gradient",
         },
         {
@@ -215,50 +196,32 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: personalWeb,
+      source_code_link: "https://github.com/Ivan-Yang1/3D_website_portfolio/tree/master",
+    },
+    
+  ];
+
+  export const contactMethods = [
+    {
+      name: "WeChat",
+      icon: wechat,
+      link: "https://wx.d4t.cn/b28X3E",
     },
     {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      name: "LinkedIn",
+      icon: linkedin,
+      link: "https://www.linkedin.com/in/%E4%B8%80%E5%87%A1-%E6%9D%A8-4b8b08300/",
     },
     {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      name: "Telegram",
+      icon: telegram,
+      link: "https://t.me/evan_yang0",
+    },
+    {
+      name: "Email",
+      icon: email,
+      link: "mailto:1372269428@qq.com",
     },
   ];
   
